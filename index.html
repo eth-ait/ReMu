@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReMu</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* A light gray background */
+        }
+        h1, h2, h3 {
+            font-weight: 700;
+        }
+        .section {
+            padding: 4rem 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #1e293b;
+        }
+        .bibtex {
+            background-color: #1e293b;
+            color: #e2e8f0;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            white-space: pre-wrap;
+            word-break: break-all;
+            position: relative;
+        }
+        .copy-btn {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background-color: #475569;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 0.375rem;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        .copy-btn:hover {
+            background-color: #64748b;
+        }
+        .copy-btn.copied {
+            background-color: #16a34a;
+        }
+    </style>
+</head>
+<body class="text-slate-800">
+
+    <!-- Header Section -->
+    <header class="text-center py-12 bg-white">
+        <div class="max-w-4xl mx-auto px-4">
+            <h1 class="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
+                ReMu <br>
+              Reconstructing Multi-layer 3D Clothed Human from Images
+            </h1>
+            <p class="text-lg text-slate-600 mb-6">
+                Official Project Page
+            </p>
+            <div class="flex justify-center items-center flex-wrap gap-x-6 gap-y-2 mb-8">
+                <!-- Author List -->
+                <span class="font-medium">John Doe<sup>1</sup></span>
+                <span class="font-medium">Jane Smith<sup>2</sup></span>
+                <span class="font-medium">Peter Jones<sup>1,2</sup></span>
+            </div>
+            <div class="flex justify-center items-center flex-wrap gap-x-6 gap-y-2 text-slate-500">
+                <!-- Affiliations -->
+                <span><sup>1</sup>University of Science</span>
+                <span><sup>2</sup>Institute of Technology</span>
+            </div>
+            <div class="mt-8 flex justify-center gap-4">
+                 <!-- Links -->
+                <a href="#your-paper-link" class="bg-blue-600 text-white font-semibold px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors">Paper</a>
+                <a href="#your-code-link" class="bg-gray-800 text-white font-semibold px-6 py-2 rounded-lg hover:bg-gray-900 transition-colors">Code</a>
+                <a href="#your-demo-link" class="bg-teal-500 text-white font-semibold px-6 py-2 rounded-lg hover:bg-teal-600 transition-colors">Live Demo</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Teaser Image/Video Section -->
+    <section id="teaser" class="py-12 bg-white">
+        <div class="max-w-5xl mx-auto px-4">
+            <h2 class="section-title">Teaser</h2>
+            <div class="bg-slate-200 rounded-lg overflow-hidden shadow-lg">
+                <!-- Replace with your teaser image -->
+                <img src="https://placehold.co/1200x675/e2e8f0/334155?text=Your+Teaser+Image+Here" 
+                     alt="Project Teaser Image" 
+                     class="w-full h-auto"
+                     onerror="this.onerror=null;this.src='https://placehold.co/1200x675/e2e8f0/334155?text=Image+Not+Found';">
+            </div>
+            <p class="text-center text-slate-600 mt-4 italic">
+                A brief, captivating description of the teaser image or video above.
+            </p>
+        </div>
+    </section>
+
+    <!-- Abstract Section -->
+    <section id="abstract" class="section">
+        <h2 class="section-title">Abstract</h2>
+        <div class="max-w-3xl mx-auto bg-white p-8 rounded-lg shadow-md">
+            <p class="text-lg leading-relaxed text-slate-700">
+                This is where your abstract goes. Write a concise summary of your research, highlighting the key contributions and findings. This paragraph should provide a clear and compelling overview of your work, encouraging visitors to delve deeper into the details of your method and results. Make it engaging and informative, setting the stage for the rest of the content on the page.
+            </p>
+        </div>
+    </section>
+
+    <!-- Method Section -->
+    <section id="method" class="section bg-white">
+        <h2 class="section-title">Method</h2>
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div class="bg-slate-200 rounded-lg overflow-hidden shadow-lg">
+                 <!-- Replace with your method/architecture diagram -->
+                <img src="https://placehold.co/800x600/e2e8f0/334155?text=Architecture+Diagram" 
+                     alt="Method Architecture Diagram" 
+                     class="w-full h-auto"
+                     onerror="this.onerror=null;this.src='https://placehold.co/800x600/e2e8f0/334155?text=Image+Not+Found';">
+            </div>
+            <div class="text-lg leading-relaxed text-slate-700">
+                <h3 class="text-2xl font-bold mb-4 text-slate-800">Our Approach</h3>
+                <p class="mb-4">
+                    Describe your methodology here. Explain the core concepts and the architecture of your model or system. You can break it down into several paragraphs for clarity.
+                </p>
+                <p class="mb-4">
+                    For example, you could discuss the novel components you introduced, the data you used for training, and the overall pipeline of your system. Use clear and precise language to convey the technical details effectively.
+                </p>
+                <ul class="list-disc list-inside space-y-2">
+                    <li>Detail Point 1: The first key aspect of our method.</li>
+                    <li>Detail Point 2: The second innovative feature.</li>
+                    <li>Detail Point 3: How we handle a specific challenge.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section id="results" class="section">
+        <h2 class="section-title">Results</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Result Item 1 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <img src="https://placehold.co/600x400/e2e8f0/334155?text=Result+1" 
+                     alt="Result 1" 
+                     class="w-full h-auto"
+                     onerror="this.onerror=null;this.src='https://placehold.co/600x400/e2e8f0/334155?text=Image+Not+Found';">
+                <div class="p-4">
+                    <h3 class="font-bold text-lg mb-2">High-Fidelity Synthesis</h3>
+                    <p class="text-slate-600">A short description of this result, explaining what it demonstrates.</p>
+                </div>
+            </div>
+            <!-- Result Item 2 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <img src="https://placehold.co/600x400/e2e8f0/334155?text=Result+2" 
+                     alt="Result 2" 
+                     class="w-full h-auto"
+                     onerror="this.onerror=null;this.src='https://placehold.co/600x400/e2e8f0/334155?text=Image+Not+Found';">
+                <div class="p-4">
+                    <h3 class="font-bold text-lg mb-2">Comparison with SOTA</h3>
+                    <p class="text-slate-600">Here we compare our method against the state-of-the-art.</p>
+                </div>
+            </div>
+            <!-- Result Item 3 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <img src="https://placehold.co/600x400/e2e8f0/334155?text=Result+3" 
+                     alt="Result 3" 
+                     class="w-full h-auto"
+                     onerror="this.onerror=null;this.src='https://placehold.co/600x400/e2e8f0/334155?text=Image+Not+Found';">
+                <div class="p-4">
+                    <h3 class="font-bold text-lg mb-2">User Study Outcome</h3>
+                    <p class="text-slate-600">Our results were preferred by users in a blind study.</p>
+                </div>
+            </div>
+            <!-- Add more result items as needed -->
+        </div>
+    </section>
+
+    <!-- Citation Section -->
+    <section id="citation" class="section bg-white">
+        <h2 class="section-title">Citation</h2>
+        <div class="max-w-3xl mx-auto">
+            <div class="bibtex">
+                <button id="copy-button" class="copy-btn">Copy</button>
+                <code id="bibtex-content">
+@article{YourLastName2025ProjectTitle,
+  title   = {Your Awesome Project Title Here},
+  author  = {Doe, John and Smith, Jane and Jones, Peter},
+  journal = {Conference or Journal Name},
+  year    = {2025}
+}
+                </code>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center py-8 bg-slate-800 text-slate-400">
+        <p>Template designed by Gemini. Feel free to use and adapt.</p>
+    </footer>
+
+    <script>
+        // JavaScript for Copy to Clipboard functionality
+        const copyButton = document.getElementById('copy-button');
+        const bibtexContent = document.getElementById('bibtex-content');
+
+        copyButton.addEventListener('click', () => {
+            // Create a temporary textarea element to hold the text
+            const textArea = document.createElement('textarea');
+            textArea.value = bibtexContent.innerText;
+            
+            // Hide the textarea from view
+            textArea.style.position = 'fixed';
+            textArea.style.left = '-9999px';
+            
+            document.body.appendChild(textArea);
+            
+            textArea.select();
+            
+            try {
+                // Use the older execCommand for broader compatibility in iFrames
+                const successful = document.execCommand('copy');
+                if (successful) {
+                    copyButton.textContent = 'Copied!';
+                    copyButton.classList.add('copied');
+                    setTimeout(() => {
+                        copyButton.textContent = 'Copy';
+                        copyButton.classList.remove('copied');
+                    }, 2000);
+                } else {
+                    alert('Oops, unable to copy');
+                }
+            } catch (err) {
+                console.error('Fallback: Oops, unable to copy', err);
+            }
+            
+            document.body.removeChild(textArea);
+        });
+    </script>
+
+</body>
+</html>
