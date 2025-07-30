@@ -5,13 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ReMu</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="images/rem_icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        body {
+         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f8fafc; /* A light gray background */
+            /* Applying a subtle linear gradient from top to bottom */
+            background: linear-gradient(to bottom, #ffffff, #e2e8f0);
+            background-color: #f8fafc; /* Fallback for older browsers */
+            background-attachment: fixed; /* Keeps the gradient fixed during scroll */
         }
         h1, h2, h3 {
             font-weight: 700;
@@ -54,53 +58,81 @@
         .copy-btn.copied {
             background-color: #16a34a;
         }
+        /* Global link style */
+        .text-link {
+            color: #0d9488; /* This is Tailwind's teal-600 */
+            text-decoration: none;
+        }
+        .text-link:hover {
+            color: #0f766e; /* This is Tailwind's teal-700 */
+            text-decoration: underline;
+        }
     </style>
 </head>
-<body class="text-slate-800">
 
+<body class="text-slate-800">
     <!-- Header Section -->
-    <header class="text-center py-12 bg-white">
+    <header class="text-center py-12">
         <div class="max-w-4xl mx-auto px-4">
-            <h1 class="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
+            <h1 class="text-4xl md:text-5xl font-bold text-slate-900 mb-4 leading-tight">
                 ReMu <br>
-              Reconstructing Multi-layer 3D Clothed Human from Images
+                <span class="text-3xl md:text-4xl font-semibold">Reconstructing Multi-layer 3D Clothed Human from Images</span>
             </h1>
             <p class="text-lg text-slate-600 mb-6">
-                Official Project Page
+                BMVC 2025 Paper
             </p>
             <div class="flex justify-center items-center flex-wrap gap-x-6 gap-y-2 mb-8">
                 <!-- Author List -->
-                <span class="font-medium">John Doe<sup>1</sup></span>
-                <span class="font-medium">Jane Smith<sup>2</sup></span>
-                <span class="font-medium">Peter Jones<sup>1,2</sup></span>
+                <span class="font-medium">Onat Vuran</span>
+                <span class="font-medium"><a href="https://ait.ethz.ch/people/hohs" target="_blank" class="text-link">Hsuan-I Ho</a></span>
             </div>
-            <div class="flex justify-center items-center flex-wrap gap-x-6 gap-y-2 text-slate-500">
-                <!-- Affiliations -->
-                <span><sup>1</sup>University of Science</span>
-                <span><sup>2</sup>Institute of Technology</span>
+            <!-- Affiliations Section -->
+            <div class="flex flex-col justify-center items-center gap-y-4 text-slate-500 mb-8">
+                <div class="w-80"> <!-- Container for the logo -->
+                    <a href="https://ait.ethz.ch/">
+                        <!-- Placeholder for the logo image -->
+                        <img src="images/ait_logo.png" 
+                             alt="AIT Lab Logo" 
+                             class="w-full h-auto" 
+                             onerror="this.onerror=null;this.src='https://placehold.co/200x60/e2e8f0/334155?text=Logo+Not+Found';">
+                    </a>
+                </div>
+                <div> <!-- Container for the text affiliation -->
+                    <span><a href="https://inf.ethz.ch/" target="_blank" class="text-link">Department of Computer Science</a>, <a href="https://ethz.ch/en.html" target="_blank" class="text-link">ETH Zürich</a></span>
+                </div>
             </div>
             <div class="mt-8 flex justify-center gap-4">
                  <!-- Links -->
                 <a href="#your-paper-link" class="bg-blue-600 text-white font-semibold px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors">Paper</a>
                 <a href="#your-code-link" class="bg-gray-800 text-white font-semibold px-6 py-2 rounded-lg hover:bg-gray-900 transition-colors">Code</a>
-                <a href="#your-demo-link" class="bg-teal-500 text-white font-semibold px-6 py-2 rounded-lg hover:bg-teal-600 transition-colors">Live Demo</a>
+                <a href="#your-demo-link" class="bg-teal-500 text-white font-semibold px-6 py-2 rounded-lg hover:bg-teal-600 transition-colors">Video</a>
             </div>
         </div>
     </header>
 
+    <!-- TL;DR Section -->
+    <section id="tldr" class="section">
+        <h2 class="section-title">TL;DR</h2>
+        <div class="max-w-5xl mx-auto bg-white p-8 rounded-lg shadow-md text-lg leading-relaxed text-slate-700">
+            <ul class="list-disc list-inside space-y-2">
+                <li>We propose to capture 3D clothed humans from "Image Layers" using a single RGB camera.</li>
+                <li>ReMu reconstructs multi-layer garments fitting to a unified canonical body from Image Layers.</li>
+                <li>The reconstructed garment are optimized for penetration-free and suitable for downstream applications. </li>
+            </ul>
+        </div>
+    </section>
+
     <!-- Teaser Image/Video Section -->
-    <section id="teaser" class="py-12 bg-white">
+    <section id="teaser" class="py-12">
         <div class="max-w-5xl mx-auto px-4">
-            <h2 class="section-title">Teaser</h2>
             <div class="bg-slate-200 rounded-lg overflow-hidden shadow-lg">
-                <!-- Replace with your teaser image -->
-                <img src="https://placehold.co/1200x675/e2e8f0/334155?text=Your+Teaser+Image+Here" 
+                <img src="images/teaser.jpg" 
                      alt="Project Teaser Image" 
                      class="w-full h-auto"
                      onerror="this.onerror=null;this.src='https://placehold.co/1200x675/e2e8f0/334155?text=Image+Not+Found';">
             </div>
-            <p class="text-center text-slate-600 mt-4 italic">
-                A brief, captivating description of the teaser image or video above.
+            <p class="text-center text-slate-600 mt-4 italic" style="text-align:justify">
+               ReMu reconstructs multi-layer garments from Image Layers. (a) Given a set of images captured by a static RGB camera, (b) our method reconstructs 3D garments in layers that fit on a unified human body. These layers are optimized to avoid possible inter-penetrations, (c) making the resulting 3D garments suitable for various downstream applications, such as clothing simulation.
             </p>
         </div>
     </section>
@@ -109,35 +141,41 @@
     <section id="abstract" class="section">
         <h2 class="section-title">Abstract</h2>
         <div class="max-w-3xl mx-auto bg-white p-8 rounded-lg shadow-md">
-            <p class="text-lg leading-relaxed text-slate-700">
-                This is where your abstract goes. Write a concise summary of your research, highlighting the key contributions and findings. This paragraph should provide a clear and compelling overview of your work, encouraging visitors to delve deeper into the details of your method and results. Make it engaging and informative, setting the stage for the rest of the content on the page.
+            <p class="text-lg leading-relaxed text-slate-700" style="text-align:justify">
+                The reconstruction of multi-layer 3D garments typically requires expensive multi-view capture setups and specialized 3D editing efforts. 
+                To support the creation of life-like clothed human avatars, we introduce ReMu for reconstructing multi-layer clothed humans in a new setup, Image Layers, which captures a subject wearing different layers of clothing with a single RGB camera.
+                To reconstruct physically plausible multi-layer 3D garments, a unified 3D representation is necessary to model these garments in a layered manner.
+                Thus, we first reconstruct and register each garment layer in a shared coordinate system defined by the canonical body pose. 
+                Afterwards, we introduce a collision-aware optimization process to address interpenetration and further refine the garment boundaries leveraging implicit neural fields. 
+                It is worth noting that our method is template-free and category-agnostic, which enables the reconstruction of 3D garments in diverse clothing styles.
+                Through our experiments, we show that our method achieves competitive performance compared to category-specific methods and reconstructs penetration-free 3D clothed humans.
             </p>
         </div>
     </section>
 
     <!-- Method Section -->
-    <section id="method" class="section bg-white">
+    <section id="method" class="section">
         <h2 class="section-title">Method</h2>
         <div class="grid md:grid-cols-2 gap-12 items-center">
             <div class="bg-slate-200 rounded-lg overflow-hidden shadow-lg">
-                 <!-- Replace with your method/architecture diagram -->
-                <img src="https://placehold.co/800x600/e2e8f0/334155?text=Architecture+Diagram" 
+                <img src="images/method.jpg" 
                      alt="Method Architecture Diagram" 
                      class="w-full h-auto"
                      onerror="this.onerror=null;this.src='https://placehold.co/800x600/e2e8f0/334155?text=Image+Not+Found';">
             </div>
             <div class="text-lg leading-relaxed text-slate-700">
-                <h3 class="text-2xl font-bold mb-4 text-slate-800">Our Approach</h3>
-                <p class="mb-4">
-                    Describe your methodology here. Explain the core concepts and the architecture of your model or system. You can break it down into several paragraphs for clarity.
-                </p>
-                <p class="mb-4">
-                    For example, you could discuss the novel components you introduced, the data you used for training, and the overall pipeline of your system. Use clear and precise language to convey the technical details effectively.
+                <p class="mb-4" style="text-align: justify;">
+                    Given a set of k-layered Image Layers <code>I<sub>k</sub></code>, we register SMPL-X body models <code>B</code> and reconstruct watertight meshes <code>M</code> from images.
+                    We then segment out 3D garments <code>S</code> through multi-view parsing.
+                    Next, we deform 3D meshes to the canonical body pose <code>B<sub>c</sub></code> through inverse LBS.
+                    These aligned garments are optimized to remove inter-layer penetrations as <code>M'</code>.
+                    Finally, we fit implicit neural fields <code>f</code> to refine the garment surface geometry and boundaries.
                 </p>
                 <ul class="list-disc list-inside space-y-2">
-                    <li>Detail Point 1: The first key aspect of our method.</li>
-                    <li>Detail Point 2: The second innovative feature.</li>
-                    <li>Detail Point 3: How we handle a specific challenge.</li>
+                    <h3 class="font-bold text-lg mb-2">Technical Contributions:</h3>
+                    <li>Garment Registration: The first key aspect of our method.</li>
+                    <li>Penetration Removal: The second innovative feature.</li>
+                    <li>Garment Refinement: How we handle a specific challenge.</li>
                 </ul>
             </div>
         </div>
@@ -184,17 +222,33 @@
         </div>
     </section>
 
+    <!-- References Section -->
+    <section id="references" class="section">
+        <h2 class="section-title">References</h2>
+        <div class="max-w-5xl mx-auto text-slate-700 leading-relaxed">
+            <li>
+                Ho et. al, "<a href="https://ait.ethz.ch/sith" target="_blank" class="text-link">SiTH: Single-view Textured Human Reconstruction with Image-Conditioned Diffusion</a>." CVPR, 2024.
+            </li>
+            <li>
+                Kim et. al, "<a href="https://snuvclab.github.io/gala/" target="_blank" class="text-link">GALA: Generating Animatable Layered Assets from a Single Scan</a>." CVPR, 2024.
+            </li>
+            <li>
+                Wang et. al, "<a href="https://eth-ait.github.io/4d-dress/" target="_blank" class="text-link">4D-DRESS: A 4D Dataset of Real-world Human Clothing with Semantic Annotations</a>." CVPR, 2024.
+            </li>
+        </div>
+    </section>
+
     <!-- Citation Section -->
-    <section id="citation" class="section bg-white">
+    <section id="citation" class="section">
         <h2 class="section-title">Citation</h2>
-        <div class="max-w-3xl mx-auto">
+        <div class="max-w-4xl mx-auto">
             <div class="bibtex">
                 <button id="copy-button" class="copy-btn">Copy</button>
                 <code id="bibtex-content">
-@article{YourLastName2025ProjectTitle,
-  title   = {Your Awesome Project Title Here},
-  author  = {Doe, John and Smith, Jane and Jones, Peter},
-  journal = {Conference or Journal Name},
+@inproceedings{vuran2025remu,
+  title   = {ReMu: Reconstructing Multi-layer 3D Clothed Human from Images},
+  author  = {Vuran, Onat and Ho, Hsuan-I},
+  booktitle = {British Machine Vision Conference (BMVC)},
   year    = {2025}
 }
                 </code>
@@ -236,7 +290,8 @@
                         copyButton.classList.remove('copied');
                     }, 2000);
                 } else {
-                    alert('Oops, unable to copy');
+                    // We don't use alert in this environment.
+                    console.error('Oops, unable to copy');
                 }
             } catch (err) {
                 console.error('Fallback: Oops, unable to copy', err);
