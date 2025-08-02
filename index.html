@@ -67,6 +67,12 @@
             color: #0f766e; /* This is Tailwind's teal-700 */
             text-decoration: underline;
         }
+        video {
+            /* Ensures videos have a consistent look */
+            background-color: #e2e8f0; /* Light gray background for videos */
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
     </style>
 </head>
 
@@ -115,9 +121,9 @@
         <h2 class="section-title">TL;DR</h2>
         <div class="max-w-5xl mx-auto bg-white p-8 rounded-lg shadow-md text-lg leading-relaxed text-slate-700">
             <ul class="list-disc list-inside space-y-2">
-                <li>We propose to capture 3D clothed humans from "Image Layers" using a single RGB camera.</li>
-                <li>ReMu reconstructs multi-layer garments fitting to a unified canonical body from Image Layers.</li>
-                <li>The reconstructed garment are optimized for penetration-free and suitable for downstream applications. </li>
+                <li>We introduce a clothed human capturing scheme using a single RGB camera to capture "Image Layers".</li>
+                <li>ReMu reconstructs multi-layer garments fitting to a unified canonical body.</li>
+                <li>The reconstructed garments are optimized for penetration-free and suitable for downstream applications.</li>
             </ul>
         </div>
     </section>
@@ -183,44 +189,168 @@
 
     <!-- Results Section -->
     <section id="results" class="section">
-        <h2 class="section-title">Results</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <h2 class="section-title">Results on 4D-DRESS</h2>
+        <div class="space-y-12">
+            
             <!-- Result Item 1 -->
-            <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                <img src="https://placehold.co/600x400/e2e8f0/334155?text=Result+1" 
-                     alt="Result 1" 
-                     class="w-full h-auto"
-                     onerror="this.onerror=null;this.src='https://placehold.co/600x400/e2e8f0/334155?text=Image+Not+Found';">
-                <div class="p-4">
-                    <h3 class="font-bold text-lg mb-2">High-Fidelity Synthesis</h3>
-                    <p class="text-slate-600">A short description of this result, explaining what it demonstrates.</p>
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <div class="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-4 text-center">
+                    <!-- Column for Input Image -->
+                    <div>
+                        <h4 class="font-semibold mb-2 text-slate-600">Input Images</h4>
+                        <img src="images/example1.png" 
+                             alt="Input Image" 
+                             class="w-full h-auto rounded-lg shadow-md"
+                             onerror="this.onerror=null;this.src='https://placehold.co/300x400/e2e8f0/334155?text=Image+Not+Found';">
+                    </div>
+                    <!-- Column for Method 1 -->
+                    <div>
+                        <h4 class="font-semibold mb-2 text-slate-600">SMPLicit</h4>
+                        <video class="w-full h-auto" autoplay loop muted playsinline>
+                            <source src="videos/smplicit_crop.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <!-- Column for Method 2 -->
+                    <div>
+                        <h4 class="font-semibold mb-2 text-slate-600">ClothWild</h4>
+                        <video class="w-full h-auto" autoplay loop muted playsinline>
+                            <source src="videos/clothwild_crop.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <!-- Column for Method 3 -->
+                    <div>
+                        <h4 class="font-semibold mb-2 text-slate-600">ISP</h4>
+                        <video class="w-full h-auto" autoplay loop muted playsinline>
+                            <source src="videos/isp_crop.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <!-- Column for Ours -->
+                    <div>
+                        <h4 class="font-semibold mb-2 text-teal-600">Ours</h4>
+                        <video class="w-full h-auto" autoplay loop muted playsinline>
+                            <source src="videos/ours_crop.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
                 </div>
             </div>
+
             <!-- Result Item 2 -->
-            <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                <img src="https://placehold.co/600x400/e2e8f0/334155?text=Result+2" 
-                     alt="Result 2" 
-                     class="w-full h-auto"
-                     onerror="this.onerror=null;this.src='https://placehold.co/600x400/e2e8f0/334155?text=Image+Not+Found';">
-                <div class="p-4">
-                    <h3 class="font-bold text-lg mb-2">Comparison with SOTA</h3>
-                    <p class="text-slate-600">Here we compare our method against the state-of-the-art.</p>
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <div class="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-4 text-center">
+                    <!-- Column for Input Image -->
+                    <div>
+                        <h4 class="font-semibold mb-2 text-slate-600">Input Images</h4>
+                        <img src="images/example2.png" 
+                             alt="Input Image" 
+                             class="w-full h-auto rounded-lg shadow-md"
+                             onerror="this.onerror=null;this.src='https://placehold.co/300x400/e2e8f0/334155?text=Image+Not+Found';">
+                    </div>
+                    <!-- Column for Method 1 -->
+                    <div>
+                        <h4 class="font-semibold mb-2 text-slate-600">SMPLicit</h4>
+                        <video class="w-full h-auto" autoplay loop muted playsinline>
+                            <source src="videos/smplicit2_crop.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <!-- Column for Method 2 -->
+                    <div>
+                        <h4 class="font-semibold mb-2 text-slate-600">ClothWild</h4>
+                        <video class="w-full h-auto" autoplay loop muted playsinline>
+                            <source src="videos/clothwild2_crop.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <!-- Column for Method 3 -->
+                    <div>
+                        <h4 class="font-semibold mb-2 text-slate-600">ISP</h4>
+                        <video class="w-full h-auto" autoplay loop muted playsinline>
+                            <source src="videos/isp2_crop.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <!-- Column for Ours -->
+                    <div>
+                        <h4 class="font-semibold mb-2 text-teal-600">Ours</h4>
+                        <video class="w-full h-auto" autoplay loop muted playsinline>
+                            <source src="videos/ours2_crop.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
                 </div>
             </div>
-            <!-- Result Item 3 -->
-            <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                <img src="https://placehold.co/600x400/e2e8f0/334155?text=Result+3" 
-                     alt="Result 3" 
-                     class="w-full h-auto"
-                     onerror="this.onerror=null;this.src='https://placehold.co/600x400/e2e8f0/334155?text=Image+Not+Found';">
-                <div class="p-4">
-                    <h3 class="font-bold text-lg mb-2">User Study Outcome</h3>
-                    <p class="text-slate-600">Our results were preferred by users in a blind study.</p>
-                </div>
-            </div>
-            <!-- Add more result items as needed -->
+
+            <!-- Add more result items by copying the structure above -->
+
         </div>
     </section>
+
+   <!-- In-the-wild Capture Section -->
+    <section id="in-the-wild" class="section">
+        <h2 class="section-title">In-the-wild Capture</h2>
+        <div class="bg-white rounded-lg shadow-lg p-6 space-y-8">
+            <!-- Image Row -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div>
+                    <img src="images/0.jpg" 
+                         alt="In-the-wild scene 1" 
+                         class="w-full h-auto rounded-lg shadow-md"
+                         onerror="this.onerror=null;this.src='https://placehold.co/300x400/e2e8f0/334155?text=Image+Not+Found';">
+                </div>
+                <div>
+                    <img src="images/1.jpg" 
+                         alt="In-the-wild scene 2" 
+                         class="w-full h-auto rounded-lg shadow-md"
+                         onerror="this.onerror=null;this.src='https://placehold.co/300x400/e2e8f0/334155?text=Image+Not+Found';">
+                </div>
+                <div>
+                    <img src="images/2.jpg" 
+                         alt="In-the-wild scene 3" 
+                         class="w-full h-auto rounded-lg shadow-md"
+                         onerror="this.onerror=null;this.src='https://placehold.co/300x400/e2e8f0/334155?text=Image+Not+Found';">
+                </div>
+                <div>
+                    <img src="images/3.jpg" 
+                         alt="In-the-wild scene 4" 
+                         class="w-full h-auto rounded-lg shadow-md"
+                         onerror="this.onerror=null;this.src='https://placehold.co/300x400/e2e8f0/334155?text=Image+Not+Found';">
+                </div>
+            </div>
+            <!-- Video Row -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div>
+                    <video class="w-full h-auto" autoplay loop muted playsinline>
+                        <source src="videos/aitviewer_0_crop.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div>
+                    <video class="w-full h-auto" autoplay loop muted playsinline>
+                        <source src="videos/aitviewer_1_crop.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div>
+                    <video class="w-full h-auto" autoplay loop muted playsinline>
+                        <source src="videos/aitviewer_2_crop.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div>
+                    <video class="w-full h-auto" autoplay loop muted playsinline>
+                        <source src="videos/aitviewer_3_crop.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
 
     <!-- References Section -->
     <section id="references" class="section">
@@ -235,6 +365,16 @@
             <li>
                 Wang et. al, "<a href="https://eth-ait.github.io/4d-dress/" target="_blank" class="text-link">4D-DRESS: A 4D Dataset of Real-world Human Clothing with Semantic Annotations</a>." CVPR, 2024.
             </li>
+            <li>
+                Corona et. al, "<a href="https://github.com/enriccorona/SMPLicit" target="_blank" class="text-link">SMPLicit: Topology-aware Generative Model for Clothed People</a>." CVPR, 2021.
+            </li>
+            <li>
+                Moon et. al, "<a href="https://github.com/hygenie1228/ClothWild_RELEASE" target="_blank" class="text-link">ClothWild: 3D Clothed Human Reconstruction in the Wilde</a>." ECCV, 2022.
+            </li>
+            <li>
+                Li et. al, "<a href="https://github.com/liren2515/ISP" target="_blank" class="text-link">ISP: Multi-Layered Garment Draping with Implicit Sewing Patterns</a>." NeurIPS, 2023.
+            </li>
+
         </div>
     </section>
 
